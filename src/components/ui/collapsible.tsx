@@ -13,7 +13,7 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
   const theme = useTheme();
 
   return (
-    <ThemedView>
+    <ThemedView style={styles.container}>
       <Pressable
         style={({ pressed }) => [styles.heading, pressed && styles.pressedHeading]}
         onPress={() => setIsOpen((value) => !value)}>
@@ -27,7 +27,7 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
           />
         </ThemedView>
 
-        <ThemedText type="small">{title}</ThemedText>
+        <ThemedText type="small" style={styles.headerText}>{title}</ThemedText>
       </Pressable>
       {isOpen && (
         <Animated.View entering={FadeIn.duration(200)}>
@@ -41,6 +41,12 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#372343',
+    paddingVertical: Spacing.two,
+    paddingHorizontal: Spacing.three,
+    borderRadius: 15,
+  },
   heading: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -48,6 +54,9 @@ const styles = StyleSheet.create({
   },
   pressedHeading: {
     opacity: 0.7,
+  },
+  headerText: {
+    color: '#ffffff'
   },
   button: {
     width: Spacing.four,
@@ -57,9 +66,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   content: {
-    marginTop: Spacing.three,
-    borderRadius: Spacing.three,
-    marginLeft: Spacing.four,
-    padding: Spacing.four,
+    marginTop: Spacing.two,
+    borderRadius: Spacing.three
   },
 });

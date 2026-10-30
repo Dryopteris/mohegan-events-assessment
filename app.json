@@ -1,14 +1,18 @@
 {
   "expo": {
-    "name": "MoheganEvents",
+    "name": "Mohegan Sun Events",
     "slug": "MoheganEvents",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/mohegan-sun-icon.png",
     "scheme": "moheganevents",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.empoweredduck.MoheganEvents",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -17,7 +21,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.empoweredduck.MoheganEvents"
     },
     "web": {
       "output": "server",
@@ -37,6 +42,16 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "094158a3-3348-48c7-9ec4-eebc3b884112"
+      }
     }
   }
 }
